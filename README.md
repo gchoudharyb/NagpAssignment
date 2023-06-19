@@ -30,7 +30,7 @@ https://github.com/gchoudharyb/NagpAssignment/tree/4c372a3ce7cf7b740ff0dcad9bbca
 8. copy external ip from load balancer service using command **kubectl get svc** and copy external ip value from type= LoadBalancer. same ip will get use as host name in add/retrive data from backend.
 9. insert data using below curl
 
-
+```bash
 curl --location 'http://<external_ip>/nagp/v1/details' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -42,24 +42,14 @@ curl --location 'http://<external_ip>/nagp/v1/details' \
 	 "companyName" : "info",
 	 "designation" : "trainee"
 }'
-
+```
 **<external_ip>** = external ip value from service type= LoadBalancer
 above curl add record in backend.
 
 10. we can get the records using phone number addedd in above curl using below curl
 
-
-curl --location --request GET 'http://<external_ip>/nagp/v1/details/<phone>' \
---header 'Content-Type: application/json' \
---data-raw '{
-    
-	"firstName" : "Gaurav",
-	 "lastName" : "Kumar",
-	 "email" : "g@gmail.com ",
-	 "phone" : "789456131",
-	 "companyName" : "nagarro",
-	 "designation" : "SE"
-}'
+curl --location 'http://104.198.131.138/nagp/v1/details/9865231403' \
+--data ''
 
   <phone> = existing phone number in backend.
 
