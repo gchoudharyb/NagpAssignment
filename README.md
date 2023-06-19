@@ -8,6 +8,8 @@ microservices and a database
 
 **Database**: MySql
 
+**Repo**: https://github.com/gchoudharyb/NagpAssignment
+
 ## Backend Microservice code repositiory
 
 https://github.com/gchoudharyb/NagpAssignment/tree/main/nagp-kube-dev
