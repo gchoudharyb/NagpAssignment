@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: nagp-k8s-assign-deployment
+spec: 
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nagp-k8s-assign
+  template:  
+    metadata:
+      name: nagp-k8s-assign-pod
+      labels:
+        app: nagp-k8s-assign 
+    spec:
+      initContainers:
+        - name: init-db
+          image: busybox:1.31
+          command: ['sh', '-c', 'echo -e "Checking availability of MySQL deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
+      containers:
+        - name: nagp-k8s-assign-container
+          image: gchoudharyb/nagp-kube-dev-assign:v3
+          ports: 
+            - containerPort: 9090  
+          env:
+            - name: DB_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: nagp-k8s-assign-prop
+                  key: mysql-db-host            
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: nagp-k8s-assign-prop
+                  key: mysql-db-port            
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: nagp-k8s-assign-prop
+                  key: mysql-db-name             
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: nagp-k8s-assign-prop
+                  key: mysql-db-username   
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password  
+    

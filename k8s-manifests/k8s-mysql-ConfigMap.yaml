@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nagp-k8s-assign-dbcreation-script
+data: 
+  nagp_k8s_assign_dbcreation.sql: |-
+    DROP DATABASE IF EXISTS nagpdb;
+    CREATE DATABASE nagpdb; 
