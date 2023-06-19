@@ -43,14 +43,33 @@ curl --location 'http://**<external_ip>**/nagp/v1/details' \
 	 "designation" : "trainee"
 }'
 ```
+sample curl
+```bash
+curl --location 'http://104.198.131.138/nagp/v1/details' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    
+	"firstName" : "Gaurav",
+	 "lastName" : "choudhary",
+	 "email" : "t@gmail.com ",
+	 "phone" : "9865231403",
+	 "companyName" : "info",
+	 "designation" : "trainee"
+}'
+```
 **<external_ip>** = external ip value from service type= LoadBalancer
 
 
 10. we can get the records using phone number addedd in above curl using below curl
 ```bash
-curl --location 'http://104.198.131.138/nagp/v1/details/**<phone>**' \
+curl --location 'http://104.198.131.138/nagp/v1/details/**<phone_num>**' \
 --data ''
 ```
+sample curl:
 
-**<phone>** = existing phone number in backend.
+```bash
+curl --location 'http://104.198.131.138/nagp/v1/details/9865231403' \
+--data ''
+```
+**<phone_num>** = external ip value from service type= LoadBalancer
 
