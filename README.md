@@ -31,7 +31,7 @@ https://github.com/gchoudharyb/NagpAssignment/tree/4c372a3ce7cf7b740ff0dcad9bbca
 9. insert data using below curl
 
 ```bash
-curl --location 'http://<external_ip>/nagp/v1/details' \
+curl --location 'http://**<external_ip>**/nagp/v1/details' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     
@@ -48,9 +48,9 @@ curl --location 'http://<external_ip>/nagp/v1/details' \
 
 10. we can get the records using phone number addedd in above curl using below curl
 ```bash
-curl --location 'http://104.198.131.138/nagp/v1/details/9865231403' \
+curl --location 'http://104.198.131.138/nagp/v1/details/**<phone>**' \
 --data ''
 ```
 
-<phone> = existing phone number in backend.
+**<phone>** = existing phone number in backend.
 
