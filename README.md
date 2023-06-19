@@ -17,6 +17,11 @@ https://github.com/gchoudharyb/NagpAssignment/tree/4c372a3ce7cf7b740ff0dcad9bbca
 
 https://github.com/gchoudharyb/NagpAssignment/tree/4c372a3ce7cf7b740ff0dcad9bbcafcd68bece36/k8s-manifests
 
+## Docker hub URL for Backend microervice image
+
+https://hub.docker.com/repository/docker/gchoudharyb/nagp-kube-dev-assign
+
+**tag**: v3-release
 
 ## Steps to deploy and test
 
@@ -31,7 +36,7 @@ https://github.com/gchoudharyb/NagpAssignment/tree/4c372a3ce7cf7b740ff0dcad9bbca
 9. Add data in backend tier using below curl
 
 ```bash
-curl --location 'http://**<external_ip>**/nagp/v1/details' \
+curl --location 'http://<external_ip>/nagp/v1/details' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     
@@ -62,7 +67,7 @@ curl --location 'http://104.198.131.138/nagp/v1/details' \
 
 10. View the records from backend tier using below curl
 ```bash
-curl --location 'http://104.198.131.138/nagp/v1/details/**<phone_num>**' \
+curl --location 'http://<external_ip>/nagp/v1/details/<phone_num>' \
 --data ''
 ```
 sample curl:
