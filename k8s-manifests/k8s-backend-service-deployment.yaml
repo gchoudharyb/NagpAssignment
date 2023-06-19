@@ -19,7 +19,7 @@ spec:
           command: ['sh', '-c', 'echo -e "Checking availability of MySQL deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
       containers:
         - name: nagp-k8s-assign-container
-          image: gchoudharyb/nagp-kube-dev-assign:v3
+          image: gchoudharyb/nagp-kube-dev-assign:v3-release
           ports: 
             - containerPort: 9090  
           env:
