@@ -10,16 +10,16 @@ microservices and a database
 
 **Repo**: https://github.com/gchoudharyb/NagpAssignment
 
-## Backend Microservice code repositiory
+## Backend Microservice code repository
 
 https://github.com/gchoudharyb/NagpAssignment/tree/main/nagp-kube-dev
 
 
-## K8S Manifest files
+## K8S Manifest files repository
 
 https://github.com/gchoudharyb/NagpAssignment/tree/main/k8s-manifests
 
-## Docker hub URL for Backend microervice image
+## Docker hub URL for Backend micro-service image
 
 
 https://hub.docker.com/repository/docker/gchoudharyb/nagp-kube-dev-assign
@@ -29,12 +29,12 @@ https://hub.docker.com/repository/docker/gchoudharyb/nagp-kube-dev-assign
 ## Steps to deploy and test
 
 1. Create Kubernetes clusters
-2. Check out and do the maven buld for microservice code nagp-kube-dev https://github.com/gchoudharyb/NagpAssignment/tree/main/nagp-kube-dev .
+2. Check out and do the maven build for microservice code nagp-kube-dev https://github.com/gchoudharyb/NagpAssignment/tree/main/nagp-kube-dev .
 3. Create docker image using docker file provided at path https://github.com/gchoudharyb/NagpAssignment/blob/main/nagp-kube-dev/Dockerfile
 4. Push created image to docker hub
-5. Check out kubernets manifest folder form https://github.com/gchoudharyb/NagpAssignment/tree/main/k8s-manifests
-6. Connect to kubernetes cluster using CLI and execute command **kubectl apply -f k8s-manifests/** . it will execute all k8s yaml flile in one go and will create deployment,service e.t.c accordingly.
-7. Verify all created objetc using command **kubectl get all**
+5. Check out k8s manifest folder from https://github.com/gchoudharyb/NagpAssignment/tree/main/k8s-manifests
+6. Connect to k8s cluster using CLI and execute command **kubectl apply -f k8s-manifests/** . it will execute all k8s yaml flile in one go and will create deployment,service e.t.c accordingly.
+7. Verify all created objects using command **kubectl get all**
 8. Copy external ip from load balancer service using command **kubectl get svc** and copy external ip value from type= **LoadBalancer**. Ssame ip will get use as host name in add/retrive data from backend service.
 9. Add data in backend tier using below curl
 
